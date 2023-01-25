@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 8, 2022 10:51:23 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.TblTcr" table="tbl_tcr" catalog="bismillahproject" optimistic-lock="version">
+        <id name="idTeacher" type="java.lang.Integer">
+            <column name="id_teacher" />
+            <generator class="identity" />
+        </id>
+        <property name="namaTeacher" type="string">
+            <column name="nama_teacher" length="55" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" not-null="true" />
+        </property>
+        <property name="noTelp" type="string">
+            <column name="no_telp" length="15" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="100" not-null="true" />
+        </property>
+        <property name="gaji" type="string">
+            <column name="gaji" length="30" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

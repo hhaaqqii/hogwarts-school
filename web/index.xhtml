@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login</title>
+        <link href="resources/css/main.css" rel="stylesheet" type="text/css"/>
+        <script src="resources/css/bootstrap.min.js" type="text/javascript"></script>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/dash.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body class="background">
+        <h:form class="model-content">
+            
+            <!-- Logo Hogwarts School -->
+            <img style="width: 160px; margin-top: 16px;" src="resources/image/logohogwarts5.png" alt="" class="img-fluid "></img> 
+
+            <h2 style="margin-bottom: 16px; margin-top: 5px">LOGIN</h2>
+            <h:inputText class="input_text" a:placeholder="Username" value="#{tblUser.username}"/><br/>
+            <h:inputSecret class="input_text" a:placeholder="Password" value="#{tblUser.password}"/><br/><br/>
+
+            <h:commandButton class="button_log" value="Login" action="#{tblUser.login_user()}"/><br></br>
+            <p style="font-size: 10px;color: #545D60; margin-bottom: 24px; margin-top: 4px"> Copyright 2022 Yayasan Hogwarts School</p>
+        
+        </h:form>
+    </h:body>
+</html>
+

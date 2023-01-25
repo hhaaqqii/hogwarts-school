@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Student Report</title>
+        <link href="resources/css/dash.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="resources/css/bootstrap.min.js" type="text/javascript"></script>
+        <link href="resources/css/dash.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <h:form class="kotakotak">
+            <a onclick="myfun()" style="cursor: pointer; font-size: 12px;color: blue; text-decoration: underline">This is Print Page</a>
+                <script type="text/javascript">
+                    function myfun(){
+                        window.print();
+                    }
+                </script>
+            <div style="text-align: center; padding: 32px; ">
+                <h6>YAYASAN HOGWARTS SCHOOL</h6>
+                <h2>Student Report</h2>
+                <h6 style="font-size: 12px">Jl. Kenangan Bahagia, Indonesia. 151515</h6> 
+            </div>
+            
+            <h:dataTable border="1" value="#{tblCust.getAllRecoordss()}" var="customer"
+                                   styleClass="customer-table"
+                                   headerClass="customer-table-header"
+                                   rowClasses="customer-table-odd-row,customer-table-even-row">
+                                <h:column>
+                                    <f:facet name="header"> ID Student</f:facet>
+                                    #{customer.idCustomer}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"> Name</f:facet>
+                                    #{customer.namaCustomer}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Class</f:facet>
+                                    #{customer.alamat}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Address</f:facet>
+                                    #{customer.noTlpn}
+                                </h:column>
+                            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

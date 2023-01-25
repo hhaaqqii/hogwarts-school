@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Error Login</title>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="resources/css/bootstrap.min.js" type="text/javascript"></script>
+        <link href="resources/css/login.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="alert alert-danger" role="alert" style="margin: 20px">
+                <a><img style="width: 25px; margin-left: 10px; margin-right: 10px" src="resources/image/cancel.png" alt="" class="img-fluid "></img> </a>
+                Ooops... Something went wrong! <b><h:outputText value="#{tblUser.username}"/></b>, Please check username or password and <a href="index.xhtml" class="alert-link">Login</a> again...
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

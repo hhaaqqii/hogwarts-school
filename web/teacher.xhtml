@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Teacher</title>
+        <link href="resources/css/dash.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="resources/css/bootstrap.min.js" type="text/javascript"></script>
+        <link href="resources/css/dash.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="container-fluid">
+                <div class="row" style="height: 609px">
+
+                    <!--  KOLOM SIDEBAR  -->
+                    <div class="col-2 " style="background-color: #006A77">
+
+                        <!--  LOGO HOGWARTS SCHOOL  -->
+                        <div class="gambar mt-3" >
+                           <img style="width: 90px;margin-left: 40px;margin-bottom: 6px" src="resources/image/sidelogo.png" alt="" class="img-fluid "></img>   
+                        </div>
+                         
+                        <!--  CONTENT SIDE BAR  -->
+                        <div id="sidebar-wrapper">
+                            <ul class="sidebar-nav mt-4">
+                                <li>
+                                    <img src="resources/image/sidedashhh.png" alt="" style="width: 30px"/>
+                                    <a href="dashboard.xhtml" class="none">Dashboard</a>
+                                </li>
+                                <li>
+                                    <img src="resources/image/sidetcr.png" alt="" style="width: 30px"/>
+                                     <a href="teacher.xhtml" style="color: #d4e5ef" class="none">Teacher</a>
+                                </li>
+                                <li>
+                                    <img src="resources/image/sidestd.png" alt="" style="width: 30px"/>
+                                    <a href="student.xhtml" class="none">Student</a>
+                                </li>
+                                <li>
+                                    <img src="resources/image/sideadm.png" alt="" style="width: 30px"/>
+                                    <a href="admin.xhtml" class="none">Admin</a>
+                                </li>
+                                <li>
+                                    <img src="resources/image/siderep.png" alt="" style="width: 30px"/>
+                                    <a href="report.xhtml" class="none">Report</a>
+                                </li>
+                                
+                            </ul> 
+                        </div>
+                        
+                        
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" style="width:185px; margin-top: 95px; margin-bottom: 6px;color: whitesmoke; border-radius: 4px" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Logout</button>
+                        
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body" style="text-align: center">
+                                        <img src="resources/image/exclamation.png" style="width: 120px; margin-top: 16px; margin-bottom: 16px" alt=""/>
+                                        <h2 style="margin-bottom: 16px"><b>Are you sure want to exit?</b></h2>
+                                        <p style="color: grey; font-size: 14px; margin-top: 8px">Please check back!</p>
+                                    </div>
+                                    <div class="modal-footer" style="text-align: center">
+                                        <h:commandButton class="btn btn-outline-secondary" style="width:100px; margin-bottom: 12px;color: #2d3436; border-radius: 4px"  action="/teacher.xhtml" value="Cancel"/> 
+                                        <h:commandButton class="btn btn-primary" style="width:60px; margin-bottom: 12px;color: whitesmoke; border-radius: 4px"  action="/index.xhtml" value="Yes"/> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <p style="font-size: 10px;color: #8A8A8A; margin-bottom: 8px; margin-left: 16px"> Direct by Yayasan Hogwarts School </p>
+                       
+                    </div>
+                    <!--  KOLOM SIDEBAR  -->
+                    
+                    
+                    
+                    
+                    <!--  CONTENT DASHBOARD  -->
+                    <div class="col-10" style="background-color:#d3e5ef">
+                        
+                        <div class="kotakotak">
+                            <h6 style="font-size: 12px"><a style="text-decoration: none" href="dashboard.xhtml">Dashboard</a> >> Teacher</h6>
+                            <h2>Teacher of Hogwarts School</h2>
+                        </div>
+                        
+                        <div class="kotakotak">  
+                            <h6 style="font-size: 13px">ID Teacher (auto)</h6>
+                            <div class="input-group mb-3"  >
+                                <h:inputText style="border-radius: 3px;" class="form-control" value="#{tblTcr.idTeacher}"/>
+                                 
+                                <h:commandButton style="border-radius: 3px; margin-left: 10px" class="btn btn-primary" value="Search" action="#{tblTcr.getByIdtcr()}"/><br/>
+                                  
+                                 <button type="button" style="width: 72px; margin-left: 410px;border-radius: 4px" 
+                                 class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Add</button>
+
+                                 <button type="button" style="width: 72px; margin-left: 16px;border-radius: 4px" 
+                                 class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">Edit</button>                        
+
+                                 <button type="button" style="width: 72px; margin-left: 16px;border-radius: 4px" 
+                                 class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Delete</button>             
+
+                                 <h:commandButton style="width: 72px; margin-left: 16px; margin-right: 16px;border-radius: 4px" class="btn btn-outline-secondary" value="Reset" action="#{tblTcr.resetteach()}"/>
+                            </div>
+                                              
+                            <div class="input-group">       
+                                <div style="margin-right: 35px">
+                                   <h6 style="font-size: 13px">Teacher Name*</h6>
+                                   <h:inputText style="width: 212px" class="form-control" value="#{tblTcr.namaTeacher}"/><br/> 
+                               </div>
+                                 
+                                <div style="margin-right: 35px">
+                                    <h6 style="font-size: 13px">Gender*</h6>
+                                    <h:inputText style="width: 212px" class="form-control" value="#{tblTcr.gender}"/><br/> 
+                                </div>
+                                
+                                <div style="margin-right: 35px">
+                                    <h6 style="font-size: 13px">Telephone Number*</h6>
+                                    <h:inputText style="width: 212px" class="form-control" value="#{tblTcr.noTelp}" /><br/> 
+                                </div>
+                                
+                                <div>
+                                    <h6 style="font-size: 13px">Salary*</h6>
+                                    <h:inputText style="width: 215px" class="form-control" value="#{tblTcr.gaji}"/><br/> 
+                                </div>
+                                
+                                <div>
+                                    <h6 style="font-size: 13px">Address*</h6>
+                                    <h:inputText style="width: 953px" class="form-control" value="#{tblTcr.address}"/><br/>
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        
+                        <div class="kotakotak" style="height: 160px">
+                            
+                            <h:dataTable border="1" value="#{tblTcr.getAllRecordstcr()}" var="teacher"
+                                   styleClass="employee-table"
+                                   headerClass="employee-table-header"
+                                   rowClasses="employee-table-odd-row,employee-table-even-row">
+                                 <h:column>
+                                    <f:facet name="header"> ID Teacher</f:facet>
+                                    #{teacher.idTeacher}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"> Teacher Name</f:facet>
+                                    #{teacher.namaTeacher}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"> Gender </f:facet>
+                                    #{teacher.gender}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"> Telephone Number </f:facet>
+                                    #{teacher.noTelp}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"> Salary </f:facet>
+                                    #{teacher.gaji}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"> Address </f:facet>
+                                    #{teacher.address}
+                                </h:column>
+                            </h:dataTable>
+                        </div>
+                        
+                    </div>
+                    <!--  CONTENT DASHBOARD  -->   
+                </div>
+            </div> 
+            
+            
+            
+            <!-- Per - Modalan POP UP -->
+            
+            <!-- Modal Logout -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" style="text-align: center">
+                                <img src="resources/image/exclamation.png" style="width: 120px; margin-top: 16px; margin-bottom: 16px" alt=""/>
+                                <h2 style="margin-bottom: 16px"><b>Are you sure want to exit?</b></h2>
+                                <p style="color: grey; font-size: 14px; margin-top: 8px">Please check back!</p>
+                            </div>
+                            <div class="modal-footer" style="text-align: center">
+                                <h:commandButton class="btn btn-outline-secondary" style="width:100px; margin-bottom: 12px;color: #2d3436; border-radius: 4px"  action="/dashboard.xhtml" value="Cancel"/> 
+                                <h:commandButton class="btn btn-primary" style="width:60px; margin-bottom: 12px;color: whitesmoke; border-radius: 4px"  action="/index.xhtml" value="Yes"/> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Modal Logout -->
+            
+            <!-- Modal Add -->
+                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" style="text-align: center">
+                                <img src="resources/image/check-mark.png" style="width: 120px; margin-top: 16px; margin-bottom: 16px" alt=""/>
+                                <h2 style="margin-bottom: 16px"><b>Data successfully added</b></h2>
+                            </div>
+                            <div class="modal-footer" style="text-align: center">
+                                <h:commandButton style="width:60px; margin-bottom: 12px;color: whitesmoke; border-radius: 4px" class="btn btn-success" value="OK" action="#{tblTcr.save_teacher()}"/> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Modal Add -->
+            
+            <!-- Modal Delete -->
+                <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" style="text-align: center">
+                                <img src="resources/image/exclamation.png" style="width: 120px; margin-top: 16px; margin-bottom: 16px" alt=""/>
+                                <h2 style="margin-bottom: 16px; color: red"><b>Are you sure?</b></h2>
+                                <p style="color: grey; font-size: 14px; margin-top: 8px">Please check back data when you want delete</p>
+                            </div>
+                            <div class="modal-footer" style="text-align: center">
+                                <h:commandButton class="btn btn-outline-secondary" style="width:100px; margin-bottom: 12px;color: #2d3436; border-radius: 4px"  action="/customer.xhtml" value="Cancel"/> 
+                                <h:commandButton class="btn btn-danger" style="width:100px; margin-bottom: 12px;color: whitesmoke; border-radius: 4px"  action="#{tblTcr.deleteteach()}" value="Delete"/> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Modal Delete -->
+            
+            <!-- Modal EDit -->
+                <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" style="text-align: center">
+                                <img src="resources/image/check-mark.png" style="width: 120px; margin-top: 16px; margin-bottom: 16px" alt=""/>
+                                <h2 style="margin-bottom: 16px"><b>Data successfully Edit</b></h2>
+                            </div>
+                            <div class="modal-footer" style="text-align: center">
+                                <h:commandButton style="width:60px; margin-bottom: 12px;color: whitesmoke; border-radius: 4px" class="btn btn-success" value="OK" action="#{tblTcr.editteach()}"/> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Modal edit -->
+            
+            <!-- Modal -->  
+        </h:form>   
+    </h:body>
+</html>
